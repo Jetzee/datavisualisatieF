@@ -20,8 +20,63 @@
         </nav>
     </div>
     <div class="content">
-        <h2>Dataset and preprocessing</h2>
-        <p>[Placeholder for dataset and preprocessing content]</p>
+        <h2>Our two Chosen Datasets</h2>
+
+        <h3>Dataset 1: United States Crime Rates by County</h3>
+        <ul>
+            <li>Source: <a href="https://www.kaggle.com/datasets/mikejohnsonjr/united-states-crime-rates-by-county/data" target="_blank">Kaggle</a></li>
+            <li>Description: This dataset contains crime rates per county in the United States. It includes columns such as theft, rape, murder, population, and county names. The dataset provides detailed information on various types of crimes and population sizes, making it useful for criminological research and policy-making.</li>
+            <li>Number of Instances: 3,136</li>
+            <li>Number of Attributes: 24</li>
+            <li>Variables:
+                <ul>
+                    <li><code>county_name</code> (nominal, object, discrete, 0 missing values)</li>
+                    <li><code>crime_rate_per_100000</code> (ratio, float64, continuous, 0 missing values)</li>
+                    <li><code>ROBBERY</code> (ratio, int64, discrete, 0 missing values)</li>
+                    <li><code>MURDER</code> (ratio, int64, discrete, 0 missing values)</li>
+                    <li><code>population</code> (ratio, int64, discrete, 0 missing values)</li>
+                </ul>
+            </li>
+            <li>Question to Explore: Is there a correlation between the population of a county and the frequency of certain crimes such as rape and theft?</li>
+        </ul>
+
+        <h3>Dataset 2: US Census Demographic Data</h3>
+        <ul>
+            <li>Source: <a href="https://www.kaggle.com/datasets/muonneutrino/us-census-demographic-data" target="_blank">Kaggle</a></li>
+            <li>Description: This dataset contains demographic data per county in the United States. It includes columns such as ethnic composition (Asian, Hispanic), unemployment, people working from home, total population, and income per capita. It primarily shows socio-economic and demographic statistics.</li>
+            <li>Number of Instances: 3,142</li>
+            <li>Number of Attributes: 37</li>
+            <li>Variables:
+                <ul>
+                    <li><code>County</code> (nominal, object, discrete, 0 missing values)</li>
+                    <li><code>Employed</code> (ratio, int64, discrete, 0 missing values)</li>
+                    <li><code>Men</code> (ratio, int64, discrete, 0 missing values)</li>
+                    <li><code>Hispanic</code> (ratio, float64, continuous, 0 missing values)</li>
+                    <li><code>TotalPop</code> (ratio, int64, discrete, 0 missing values)</li>
+                </ul>
+            </li>
+            <li>Question to Explore: How does the employment situation differ among various ethnic groups, such as Hispanic, Asian, Black, etc., in different counties in the United States?</li>
+        </ul>
+
+        <h2>Cleaning</h2>
+        <p>Each dataset required thorough cleaning and preprocessing. The crime data was relatively structured, with consistent column names and data types. The ACS datasets, however, had minor differences in structure between the years, necessitating a two-phase cleaning process.</p>
+        <p>In the first phase, columns were renamed and restructured to ensure consistency across the datasets. Columns with similar names or content were merged, and those deemed unnecessary were excluded.</p>
+        <p>The second phase involved normalizing the data. This was done by inspecting the unique values for each column and combining values that represented similar meanings. The final step was converting the cleaned data into a suitable format for analysis, ensuring efficiency in storage and processing.</p>
+
+        <h2>Variable Descriptions</h2>
+        <p>In terms of variable types and measurement scales, the variables in the final datasets can be classified under several combinations:</p>
+
+        <h3>Crime Data:</h3>
+        <ul>
+            <li>Continuous / Ratio variables: <code>crime_rate_per_100000</code>, <code>population</code></li>
+            <li>Discrete / Nominal variables: <code>county_name</code>, <code>MURDER</code>, <code>RAPE</code>, <code>ROBBERY</code>, <code>AGASSLT</code>, <code>BURGLRY</code>, <code>LARCENY</code>, <code>MVTHEFT</code>, <code>ARSON</code></li>
+        </ul>
+
+        <h3>ACS Data:</h3>
+        <ul>
+            <li>Continuous / Ratio variables: <code>TotalPop</code>, <code>Income</code>, <code>IncomeErr</code>, <code>IncomePerCap</code>, <code>Poverty</code></li>
+            <li>Discrete / Nominal variables: <code>State</code>, <code>County</code>, <code>Hispanic</code>, <code>White</code>, <code>Black</code>, <code>Native</code>, <code>Asian</code>, <code>Pacific</code>, <code>Professional</code>, <code>Service</code>, <code>Office</code>, <code>Construction</code>, <code>Production</code></li>
+        </ul>
     </div>
 </body>
 </html>
