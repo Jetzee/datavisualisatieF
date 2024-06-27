@@ -3,34 +3,32 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-line-height: 1.5;
-
+    line-height: 1.5;
     background-color: #f4f4f9;
 }
 
 .authors {
-padding: 30px;
-border-radius: 20px;
-background-color: #F9F9F9;
-border: 0px;
+    padding: 30px;
+    border-radius: 20px;
+    background-color: #F9F9F9;
+    border: 0;
 }
 
-        h1, h2, h3 {
-            margin-top: 40px;
-        }
-        p, ul, li {
-            margin-top: 20px;
-        }
+h1, h2, h3 {
+    margin-top: 40px;
+}
 
-
+p, ul, li {
+    margin-top: 20px;
+}
 
 .sidebar {
     width: 250px;
-    background-color: #1a73e8;
+    background-color: #344366;
     color: white;
-    padding: 20px;
+    padding: 30px;
     box-shadow: 2px 0 5px rgba(0,0,0,0.1);
-    border-radius: 10px;
+    border-radius: 20px;
     margin: 10px;
 }
 
@@ -50,16 +48,18 @@ border: 0px;
 
 .sidebar nav ul li a {
     text-decoration: none;
-    color: #c7d1e8;
+    color: #fff;
     font-size: 1.1em;
+weight: 600;
+
     display: block;
-    padding: 10px;
-    border-radius: 5px;
+    padding: 15px;
+    border-radius: 20px;
 }
 
 .sidebar nav ul li a.active, .sidebar nav ul li a:hover {
-    background-color: #4285f4;
-    color: white;
+    background-color: #fff;
+    color: black;
 }
 
 .content {
