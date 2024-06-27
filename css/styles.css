@@ -3,19 +3,25 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+line-height: 1.5;
+
     background-color: #f4f4f9;
 }
-
-
 
 .authors {
 padding: 30px;
 border-radius: 20px;
 background-color: #F9F9F9;
 border: 0px;
-
-
 }
+
+        h1, h2, h3 {
+            margin-top: 40px;
+        }
+        p, ul, li {
+            margin-top: 20px;
+        }
+
 
 
 .sidebar {
