@@ -6,6 +6,18 @@ body {
     background-color: #f4f4f9;
 }
 
+
+
+.authors {
+padding: 30px;
+border-radius: 20px;
+background-color: #F9F9F9;
+border: 0px;
+
+
+}
+
+
 .sidebar {
     width: 250px;
     background-color: #1a73e8;
