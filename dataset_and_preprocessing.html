@@ -3,65 +3,79 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Analyse van de economische en demografische invloeden op de misdaadcijfers - Dataset and preprocessing</title>
+    <title>Analyse van de economische en demografische invloeden op de misdaadcijfers - Dataset and Preprocessing</title>
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-
-    <h1>Our Two Chosen Datasets</h1>
-
-    <h2>Dataset 1: United States Crime Rates by County</h2>
-    <ul>
-        <li><strong>Source:</strong> Kaggle</li>
-        <li><strong>Description:</strong> This dataset contains crime rates per county in the United States. It includes columns such as theft, rape, murder, population, and county names. The dataset provides detailed information on various types of crimes and population sizes, making it useful for criminological research and policy-making.</li>
-        <li><strong>Number of Instances:</strong> 3,136</li>
-        <li><strong>Number of Attributes:</strong> 24</li>
-        <li><strong>Variables:</strong>
+    <div class="sidebar">
+        <h1>Analyse van de economische en demografische invloeden op de misdaadcijfers</h1>
+        <nav>
             <ul>
-                <li>county_name (nominal, object, discrete, 0 missing values)</li>
-                <li>crime_rate_per_100000 (ratio, float64, continuous, 0 missing values)</li>
-                <li>ROBBERY (ratio, int64, discrete, 0 missing values)</li>
-                <li>MURDER (ratio, int64, discrete, 0 missing values)</li>
-                <li>population (ratio, int64, discrete, 0 missing values)</li>
+                <li><a href="index.html">Introduction</a></li>
+                <li><a href="dataset_and_preprocessing.html" class="active">Dataset and preprocessing</a></li>
+                <li><a href="datastory.html">Analyse van de economische en demografische invloeden op de misdaadcijfers</a></li>
+                <li><a href="reflection.html">Reflection</a></li>
+                <li><a href="work_distribution.html">Work distribution</a></li>
             </ul>
-        </li>
-    </ul>
+        </nav>
+    </div>
+    <div class="content">
+        <h2>Dataset and Preprocessing</h2>
+        
+        <h1>Our Two Chosen Datasets</h1>
 
-    <h2>Dataset 2: US Census Demographic Data</h2>
-    <ul>
-        <li><strong>Source:</strong> Kaggle</li>
-        <li><strong>Description:</strong> This dataset contains demographic data per county in the United States. It includes columns such as ethnic composition (Asian, Hispanic), unemployment, people working from home, total population, and income per capita. It primarily shows socio-economic and demographic statistics.</li>
-        <li><strong>Number of Instances:</strong> 3,142</li>
-        <li><strong>Number of Attributes:</strong> 37</li>
-        <li><strong>Variables:</strong>
-            <ul>
-                <li>County (nominal, object, discrete, 0 missing values)</li>
-                <li>Employed (ratio, int64, discrete, 0 missing values)</li>
-                <li>Men (ratio, int64, discrete, 0 missing values)</li>
-                <li>Hispanic (ratio, float64, continuous, 0 missing values)</li>
-                <li>TotalPop (ratio, int64, discrete, 0 missing values)</li>
-            </ul>
-        </li>
-    </ul>
+        <h2>Dataset 1: United States Crime Rates by County</h2>
+        <ul>
+            <li><strong>Source:</strong> Kaggle</li>
+            <li><strong>Description:</strong> This dataset contains crime rates per county in the United States. It includes columns such as theft, rape, murder, population, and county names. The dataset provides detailed information on various types of crimes and population sizes, making it useful for criminological research and policy-making.</li>
+            <li><strong>Number of Instances:</strong> 3,136</li>
+            <li><strong>Number of Attributes:</strong> 24</li>
+            <li><strong>Variables:</strong>
+                <ul>
+                    <li>county_name (nominal, object, discrete, 0 missing values)</li>
+                    <li>crime_rate_per_100000 (ratio, float64, continuous, 0 missing values)</li>
+                    <li>ROBBERY (ratio, int64, discrete, 0 missing values)</li>
+                    <li>MURDER (ratio, int64, discrete, 0 missing values)</li>
+                    <li>population (ratio, int64, discrete, 0 missing values)</li>
+                </ul>
+            </li>
+        </ul>
 
-    <h2>Cleaning</h2>
-    <p>Each dataset required thorough cleaning and preprocessing. The crime data was relatively structured, with consistent column names and data types. The ACS datasets, however, had minor differences in structure between the years, necessitating a two-phase cleaning process.</p>
-    <p>In the first phase, columns were renamed and restructured to ensure consistency across the datasets. Columns with similar names or content were merged, and those deemed unnecessary were excluded.</p>
-    <p>The second phase involved normalizing the data. This was done by inspecting the unique values for each column and combining values that represented similar meanings. The final step was converting the cleaned data into a suitable format for analysis, ensuring efficiency in storage and processing.</p>
-    <p>Next we had to load the census data and delete Puerto Rico. This is because we are only interested in the 50 US states.</p>
+        <h2>Dataset 2: US Census Demographic Data</h2>
+        <ul>
+            <li><strong>Source:</strong> Kaggle</li>
+            <li><strong>Description:</strong> This dataset contains demographic data per county in the United States. It includes columns such as ethnic composition (Asian, Hispanic), unemployment, people working from home, total population, and income per capita. It primarily shows socio-economic and demographic statistics.</li>
+            <li><strong>Number of Instances:</strong> 3,142</li>
+            <li><strong>Number of Attributes:</strong> 37</li>
+            <li><strong>Variables:</strong>
+                <ul>
+                    <li>County (nominal, object, discrete, 0 missing values)</li>
+                    <li>Employed (ratio, int64, discrete, 0 missing values)</li>
+                    <li>Men (ratio, int64, discrete, 0 missing values)</li>
+                    <li>Hispanic (ratio, float64, continuous, 0 missing values)</li>
+                    <li>TotalPop (ratio, int64, discrete, 0 missing values)</li>
+                </ul>
+            </li>
+        </ul>
 
-    <h2>Variable Descriptions</h2>
-    <p>In terms of variable types and measurement scales, the variables in the final datasets can be classified under several combinations:</p>
-    <h3>Crime Data:</h3>
-    <ul>
-        <li>Continuous / Ratio variables: crime_rate_per_100000, population</li>
-        <li>Discrete / Nominal variables: county_name, MURDER, RAPE, ROBBERY, AGASSLT, BURGLRY, LARCENY, MVTHEFT, ARSON</li>
-    </ul>
-    <h3>ACS Data:</h3>
-    <ul>
-        <li>Continuous / Ratio variables: TotalPop, Income, IncomeErr, IncomePerCap, Poverty</li>
-        <li>Discrete / Nominal variables: State, County, Hispanic, White, Black, Native, Asian, Pacific, Professional, Service, Office, Construction, Production</li>
-    </ul>
+        <h2>Cleaning</h2>
+        <p>Each dataset required thorough cleaning and preprocessing. The crime data was relatively structured, with consistent column names and data types. The ACS datasets, however, had minor differences in structure between the years, necessitating a two-phase cleaning process.</p>
+        <p>In the first phase, columns were renamed and restructured to ensure consistency across the datasets. Columns with similar names or content were merged, and those deemed unnecessary were excluded.</p>
+        <p>The second phase involved normalizing the data. This was done by inspecting the unique values for each column and combining values that represented similar meanings. The final step was converting the cleaned data into a suitable format for analysis, ensuring efficiency in storage and processing.</p>
+        <p>Next we had to load the census data and delete Puerto Rico. This is because we are only interested in the 50 US states.</p>
 
+        <h2>Variable Descriptions</h2>
+        <p>In terms of variable types and measurement scales, the variables in the final datasets can be classified under several combinations:</p>
+        <h3>Crime Data:</h3>
+        <ul>
+            <li>Continuous / Ratio variables: crime_rate_per_100000, population</li>
+            <li>Discrete / Nominal variables: county_name, MURDER, RAPE, ROBBERY, AGASSLT, BURGLRY, LARCENY, MVTHEFT, ARSON</li>
+        </ul>
+        <h3>ACS Data:</h3>
+        <ul>
+            <li>Continuous / Ratio variables: TotalPop, Income, IncomeErr, IncomePerCap, Poverty</li>
+            <li>Discrete / Nominal variables: State, County, Hispanic, White, Black, Native, Asian, Pacific, Professional, Service, Office, Construction, Production</li>
+        </ul>
+    </div>
 </body>
 </html>
