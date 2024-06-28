@@ -65,6 +65,12 @@
         <p>In the first phase, columns were renamed and restructured to ensure consistency across the datasets. Columns with similar names or content were merged, and those deemed unnecessary were excluded.</p>
         <p>The second phase involved normalizing the data. This was done by inspecting the unique values for each column and combining values that represented similar meanings. The final step was converting the cleaned data into a suitable format for analysis, ensuring efficiency in storage and processing.</p>
         <p>Next we had to load the census data and delete Puerto Rico. This is because we are only interested in the 50 US states.</p>
+<p>To merge the census and crime datasets, we standardized the county identifiers using FIPS (Federal Information Processing Standards) codes. we first obtained a comprehensive list of county FIPS codes from an online GeoJSON file.
+
+For the census dataframe, we converted CountyId values into 5-digit FIPS codes, adding leading zeros where necessary. Similarly, for the crime dataframe, we combined state and county FIPS codes into standardized 5-digit formats.
+
+With standardized FIPS codes in both dataframes, we merged them using a left join on the FIPS column. This integrated the crime data into the census dataframe wherever matching FIPS codes existed, creating a consolidated dataset for further analysis.</p>
+
 
         <h2>Variable Descriptions</h2>
         <p>In terms of variable types and measurement scales, the variables in the final datasets can be classified under several combinations:</p>
