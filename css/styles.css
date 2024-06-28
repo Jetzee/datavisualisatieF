@@ -67,7 +67,9 @@ p, ul, li {
 .sidebar nav ul li a.active, .sidebar nav ul li a:hover {
     background-color: #fff;
     color: black;
+    transition: background-color 0.3s, color 0.3s;
 }
+
 
 .content {
     flex-grow: 1;
